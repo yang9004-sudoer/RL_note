@@ -76,6 +76,8 @@ solution:
 4. visulization tool for particular state-action pair
 5. check loss change to performance
 6. which optimizer is the best ? 
+   Finally, we've considered other strategies to improve SGD 
+   such as shuffling and curriculum learning, batch normalization, and early stopping.
 
 7. *** two big waves ***
 7.1 local optimion ? (overfitting, or big flucunate caused by hard target net update)
