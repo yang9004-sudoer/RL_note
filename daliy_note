@@ -43,8 +43,9 @@ after change the reward with 200 top
 2. optimizer update (###Now###)
    lr = 0.002, eps=1e-6
    optim.Adadelta 
-   optim.RMSprop
-   optim.Adagard ()
+   optim.RMSprop (RMSprop as well divides the learning rate by an exponentially decaying average of squared gradients. Hinton suggests 
+γ to be set to 0.9, while a good default value for the learning rate η  is 0.001.)
+   optim.Adagard (For this reason, it is well-suited for dealing with sparse data. )
    
    https://algorithmia.com/blog/introduction-to-optimizers
    https://ruder.io/optimizing-gradient-descent/
@@ -78,7 +79,7 @@ solution:
 
 7. *** two big waves ***
 7.1 local optimion ? (overfitting, or big flucunate caused by hard target net update)
-
+8. does the reward strategy matter?
 
 ###############################
 
