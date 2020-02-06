@@ -1,0 +1,98 @@
+1.优化DQN，对比不同版本的代码，整合到自己的DQN_baseline里，
+输出：pytorch版本的DQN
+https://github.com/openai/baselines/tree/master/baselines/deepq
+
+//
+https://github.com/gsurma/ # source code for gsurma
+
+//
+https://pytorch.tutorail/DQN code # 1 code 
+
+//
+https://github.com/vmayoral/basic_reinforcement_learning # 2 code reading 
+
+
+//
+https://voyageintech.com/2018/08/14/gym-experiments-cartpole-with-dqn/ # 3 code receving
+1. soft update (targetQ = (_tau)*targetQ_old + (1-_tau)*policyQ)
+2. hard update (targetQ = policyQ)
+3. sampling some state-action and visualzing the curve
+
+// 
+https://github.com/ShangtongZhang/DeepRL/dqn
+
+
+##########################33
+pytorch DQN :
+1. fast but low performance
+   (model.fit?) epochs
+2. optimizer too big too run
+
+3. initlization problem
+
+4. visualization skill for Q(s,a)
+
+5. check loss 
+
+6. param.grad.data.clamp (-1, 1)
+
+original DQN is fine !
+after change the reward with 200 top
+1. unstable ? (hard update?)
+
+2. optimizer update (###Now###)
+   lr = 0.002, eps=1e-6
+   optim.Adadelta 
+   optim.RMSprop
+   optim.Adagard ()
+   
+   https://algorithmia.com/blog/introduction-to-optimizers
+   https://ruder.io/optimizing-gradient-descent/
+   https://www.deeplearning-academy.com/p/ai-wiki-what-is-deep-learning
+   https://cran.r-project.org/web/packages/fitdistrplus/vignettes/Optimalgo.html
+
+   * conclusion: the small learning rate will lead to the slow learning, try different init values
+	also notice the swift because the big learning rate
+   which kind of optimizer algorithm is the best ? 
+
+
+3. release the bond reward bond?
+   use 1 . reward += t / reward -= t (maxStep)
+
+4. check the batch mse update (why so slow?) one batch?
+
+5. *** reloading target net problem ****
+   (only ) since the target is randomly initilized 
+   not a big problem use the soft update!
+
+6. *** only update the related Q(s,a) pair data (unstable )
+
+solution: 
+
+1. all paired updated (including final states) (done, good solution)
+2. hot warming up (done, good solution)
+3. soft update target net (3.1 nor not use the target net at all? or use the soft target net update)
+4. visulization tool for particular state-action pair
+5. check loss change to performance
+6. 
+
+7. *** two big waves ***
+7.1 local optimion ? (overfitting, or big flucunate caused by hard target net update)
+
+
+###############################
+
+
+2.部署，并对比不同版本实现的AC算法,整合到自己的AC baseline里
+输出：pytorch版本的优化后的A3C
+https://github.com/openai/baselines/blob/master/baselines
+https://hackernoon.com/intuitive-rl-intro-to-advantage-actor-critic-a2c-4ff545978752
+https://danieltakeshi.github.io/2018/06/28/a2c-a3c/
+https://openai.com/blog/baselines-acktr-a2c/
+https://arxiv.org/abs/1602.01783(Asynchronous Methods for Deep Reinforcement Learning)
+https://arxiv.org/abs/1611.05763 (Learning to reinforcement learn)
+https://theaisummer.com/Actor_critics/
+
+
+Reading
+survery of deep reinforcement learning in Video Game
