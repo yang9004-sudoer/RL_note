@@ -70,11 +70,11 @@ after change the reward with 200 top
 solution: 
 
 1. all paired updated (including final states) (done, good solution)
-2. hot warming up (done, good solution)
+2. hot warming up (done, good solution, doesn't matters reference to soft update targetnet)
 3. soft update target net (3.1 nor not use the target net at all? or use the soft target net update)
 4. visulization tool for particular state-action pair
 5. check loss change to performance
-6. 
+6. which optimizer is the best ? 
 
 7. *** two big waves ***
 7.1 local optimion ? (overfitting, or big flucunate caused by hard target net update)
