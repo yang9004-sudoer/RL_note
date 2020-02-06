@@ -76,6 +76,7 @@ solution:
 4. visulization tool for particular state-action pair
 5. check loss change to performance
 6. which optimizer is the best ? 
+   (use Adam, RMSprop, or AdaDelta)
    Finally, we've considered other strategies to improve SGD 
    such as shuffling and curriculum learning, batch normalization, and early stopping.
 
